@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "<html><body>"
+echo "<h1>Script output</h1>"
+echo "<hr><p>"
+cat /proc/version
