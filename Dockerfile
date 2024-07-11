@@ -10,8 +10,6 @@ COPY script-cgi /var/www/cgi-bin/
 RUN chmod 644 /var/www/html/index.html
 RUN chmod 755 /var/www/cgi-bin/script-cgi
 
-expose 8080
-
 # need to change some permissions to allow non-root user to start things
 # had to do these steps to give the httpd deamon the ability to.
 # This actually appears due to a bug with Windows and Mac. It looks like
