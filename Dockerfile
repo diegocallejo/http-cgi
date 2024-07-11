@@ -1,4 +1,4 @@
-FROM rhel:rhel9:latest
+FROM rhel:rhel9:9.8
 
 MAINTAINER Diego Callejo
 
