@@ -1,12 +1,13 @@
-FROM rhel:rhel9:latest
+FROM registry.access.redhat.com/ubi8/ubi
 
 MAINTAINER Diego Callejo
+ENV foo=text
 
-RUN yum -y install httpd mod_wsgi mod_auth_gssapi
-RUN yum -y install krb5-workstation
-RUN yum clean all -y
-COPY index.html /var/www/html/
-COPY script-cgi /var/www/cgi-bin/
+RUN dnf install -y httpd mod_wsgi mod_auth_gssapi
+RUN dnf install -y curl krb5-workstation
+RUN dnf clean all -y
+ADD index.html /var/www/html/
+ADD script-cgi /var/www/cgi-bin/
 RUN chmod 644 /var/www/html/index.html
 RUN chmod 755 /var/www/cgi-bin/script-cgi
 
